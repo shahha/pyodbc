@@ -133,7 +133,7 @@ static PyObject* CnxnInfo_New(Connection* cnxn)
     if (SQL_SUCCEEDED(SQLGetInfo(cnxn->hdbc, SQL_NEED_LONG_DATA_LEN, szYN, _countof(szYN), &cch)))
         p->need_long_data_len = (szYN[0] == 'Y');
 
-    GetColumnSize(cnxn, SQL_VARCHAR, &p->varchar_maxlength);
+    GetColumnSize(cnxn, SQL_CHAR, &p->varchar_maxlength);
     GetColumnSize(cnxn, SQL_WVARCHAR, &p->wvarchar_maxlength);
     GetColumnSize(cnxn, SQL_VARBINARY, &p->binary_maxlength);
     GetColumnSize(cnxn, SQL_TYPE_TIMESTAMP, &p->datetime_precision);
