@@ -71,7 +71,7 @@ inline void GetColumnSize(Connection* cnxn, SQLSMALLINT sqltype, int* psize)
 
     if (SQL_SUCCEEDED(SQLGetTypeInfo(hstmt, sqltype)) &&
         SQL_SUCCEEDED(SQLFetch(hstmt)) &&
-        SQL_SUCCEEDED(SQLGetData(hstmt, 3, SQL_INTEGER, &columnsize, sizeof(columnsize), 0)))
+        SQL_SUCCEEDED(SQLGetData(hstmt, 3, SQL_INTEGER, &columnsize, sizeof(columnsize), 0)) &&
         SQL_SUCCEEDED(SQLGetData(hstmt, 3, SQL_INTEGER, &columnsize, sizeof(columnsize), 0)))
 
     {
